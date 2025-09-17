@@ -4,7 +4,11 @@ const app = express()
 const port = process.env.PORT || 3000
 
 const start = async() => {
-    app.listen(port , console.log(`Server is listen on ${port}`))
+    try {
+         app.listen(port , console.log(`Server is listen on ${port}`))
+    } catch (error) {
+        console.log(error);        
+    }
 }
 
 start()
